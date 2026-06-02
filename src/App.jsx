@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import ErrorBoundary from "./components/ErrorBoundary"
+import ScrollToTop from "./components/ScrollToTop"
 
 const Home        = lazy(() => import("./pages/Home"))
 const Experience  = lazy(() => import("./pages/Experience"))
@@ -19,6 +20,7 @@ function PageLoader() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col">
         <Navbar />
         <main className="flex-1">

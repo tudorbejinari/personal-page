@@ -61,7 +61,7 @@ export default function ArticleDetail() {
     <div>
       {article.image && <PageBanner src={article.image} />}
 
-      <div className="max-w-3xl mx-auto px-6 py-10 sm:py-14">
+      <div className="max-w-3xl mx-auto px-6 py-10 sm:py-14 overflow-x-hidden">
         <Link
           to="/articles"
           className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200 mb-8 sm:mb-10"
