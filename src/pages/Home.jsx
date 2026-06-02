@@ -28,6 +28,14 @@ const styleMap = {
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
+      {/* Hero background image */}
+      <img
+        src="https://images.unsplash.com/photo-1510906594845-bc082582c8cc?w=1400&q=70&fit=crop&auto=format&fm=webp"
+        alt=""
+        loading="eager"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+      />
+      <div className="absolute inset-0 bg-navy-950/88 pointer-events-none" />
       {/* Base hero gradient */}
       <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
       {/* Ambient orbs */}

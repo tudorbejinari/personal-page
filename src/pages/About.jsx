@@ -106,7 +106,17 @@ const tools = [
 
 export default function About() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-14 sm:py-20 space-y-16 sm:space-y-20">
+    <div>
+      <div className="relative w-full h-52 sm:h-72 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1668681919287-7367677cdc4c?w=1400&q=75&fit=crop&auto=format&fm=webp"
+          alt=""
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/10" />
+      </div>
+    <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-16 sm:space-y-20">
 
       {/* Hero intro */}
       <section className="space-y-8">
@@ -227,6 +237,7 @@ export default function About() {
         </div>
       </section>
 
+    </div>
     </div>
   )
 }

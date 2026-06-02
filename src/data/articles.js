@@ -6,7 +6,7 @@ export const articles = [
     date: "2026-06-01",
     tags: ["AI", "QA", "Automation"],
     file: "ai-qa-toolkit.md",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "auto-test-plan",
@@ -15,7 +15,7 @@ export const articles = [
     date: "2026-05-28",
     tags: ["AI", "QA", "Automation", "CI/CD"],
     file: "auto-test-plan.md",
-    image: "https://images.unsplash.com/photo-1637789594401-5a0dac0d3e36?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1637789594401-5a0dac0d3e36?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "ai-specialists-team",
@@ -24,7 +24,7 @@ export const articles = [
     date: "2026-05-24",
     tags: ["AI", "Architecture", "Testing"],
     file: "ai-specialists-team.md",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "pr-review-comments",
@@ -33,7 +33,7 @@ export const articles = [
     date: "2026-05-20",
     tags: ["AI", "Code Review", "Automation"],
     file: "pr-review-comments.md",
-    image: "https://images.unsplash.com/photo-1527066579998-dbbae57f45ce?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1527066579998-dbbae57f45ce?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "catching-flaky-tests",
@@ -42,7 +42,7 @@ export const articles = [
     date: "2026-05-15",
     tags: ["Playwright", "Flaky Tests", "Debugging"],
     file: "catching-flaky-tests.md",
-    image: "https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "ticket-to-test",
@@ -51,7 +51,7 @@ export const articles = [
     date: "2026-05-10",
     tags: ["AI", "Playwright", "Automation", "Testing"],
     file: "ticket-to-test.md",
-    image: "https://images.unsplash.com/photo-1650473395434-8674d953ef2f?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1650473395434-8674d953ef2f?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "figma-compare",
@@ -60,7 +60,7 @@ export const articles = [
     date: "2026-06-02",
     tags: ["AI", "Design QA", "Figma", "Automation"],
     file: "figma-compare.md",
-    image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "ai-test-architecture",
@@ -69,7 +69,7 @@ export const articles = [
     date: "2026-04-21",
     tags: ["AI", "Playwright", "Architecture", "Automation"],
     file: "ai-test-architecture.md",
-    image: "https://images.unsplash.com/photo-1669295384050-a1d4357bd1d7?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1669295384050-a1d4357bd1d7?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "visual-qa-tool",
@@ -78,7 +78,7 @@ export const articles = [
     date: "2026-04-15",
     tags: ["AI", "Playwright", "Visual Testing", "Angular"],
     file: "visual-qa-tool.md",
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "ai-test-scenarios",
@@ -87,7 +87,7 @@ export const articles = [
     date: "2026-04-10",
     tags: ["AI", "Playwright", "Automation"],
     file: "ai-test-scenarios.md",
-    image: "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
   {
     id: "reduce-flaky-tests",
@@ -96,6 +96,6 @@ export const articles = [
     date: "2026-04-05",
     tags: ["Playwright", "Best Practices", "CI/CD"],
     file: "reduce-flaky-tests.md",
-    image: "https://images.unsplash.com/photo-1563089145-599997674d42?w=800&q=80&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1563089145-599997674d42?w=800&q=75&fit=crop&auto=format&fm=webp",
   },
 ]

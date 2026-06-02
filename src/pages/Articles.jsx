@@ -5,7 +5,18 @@ export default function Articles() {
   const sorted = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date))
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-14 sm:py-20 space-y-10 sm:space-y-12">
+    <div>
+      <div className="relative w-full h-52 sm:h-72 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1513346940221-6f673d962e97?w=1400&q=75&fit=crop&auto=format&fm=webp"
+          alt=""
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/10" />
+      </div>
+
+    <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-3 max-w-2xl">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Writing</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Articles</h1>
@@ -17,6 +28,7 @@ export default function Articles() {
       <div className="space-y-3">
         {sorted.map((a) => <ArticleCard key={a.id} article={a} />)}
       </div>
+    </div>
     </div>
   )
 }
