@@ -6,7 +6,6 @@ export const articles = [
     date: "2026-06-01",
     tags: ["AI", "QA", "Automation"],
     file: "ai-qa-toolkit.md",
-    featured: false,
   },
   {
     id: "auto-test-plan",
@@ -15,7 +14,6 @@ export const articles = [
     date: "2026-05-28",
     tags: ["AI", "QA", "Automation", "CI/CD"],
     file: "auto-test-plan.md",
-    featured: true,
   },
   {
     id: "ai-specialists-team",
@@ -24,7 +22,6 @@ export const articles = [
     date: "2026-05-24",
     tags: ["AI", "Architecture", "Testing"],
     file: "ai-specialists-team.md",
-    featured: true,
   },
   {
     id: "pr-review-comments",
@@ -33,7 +30,6 @@ export const articles = [
     date: "2026-05-20",
     tags: ["AI", "Code Review", "Automation"],
     file: "pr-review-comments.md",
-    featured: false,
   },
   {
     id: "catching-flaky-tests",
@@ -42,7 +38,6 @@ export const articles = [
     date: "2026-05-15",
     tags: ["Playwright", "Flaky Tests", "Debugging"],
     file: "catching-flaky-tests.md",
-    featured: false,
   },
   {
     id: "ticket-to-test",
@@ -51,7 +46,6 @@ export const articles = [
     date: "2026-05-10",
     tags: ["AI", "Playwright", "Automation", "Testing"],
     file: "ticket-to-test.md",
-    featured: false,
   },
   {
     id: "figma-compare",
@@ -60,7 +54,6 @@ export const articles = [
     date: "2026-06-02",
     tags: ["AI", "Design QA", "Figma", "Automation"],
     file: "figma-compare.md",
-    featured: true,
   },
   {
     id: "ai-test-architecture",
@@ -69,7 +62,6 @@ export const articles = [
     date: "2026-04-21",
     tags: ["AI", "Playwright", "Architecture", "Automation"],
     file: "ai-test-architecture.md",
-    featured: true,
   },
   {
     id: "visual-qa-tool",
@@ -78,7 +70,6 @@ export const articles = [
     date: "2026-04-15",
     tags: ["AI", "Playwright", "Visual Testing", "Angular"],
     file: "visual-qa-tool.md",
-    featured: true,
   },
   {
     id: "ai-test-scenarios",
@@ -87,7 +78,6 @@ export const articles = [
     date: "2026-04-10",
     tags: ["AI", "Playwright", "Automation"],
     file: "ai-test-scenarios.md",
-    featured: false,
   },
   {
     id: "reduce-flaky-tests",
@@ -96,6 +86,5 @@ export const articles = [
     date: "2026-04-05",
     tags: ["Playwright", "Best Practices", "CI/CD"],
     file: "reduce-flaky-tests.md",
-    featured: false,
   },
 ]
