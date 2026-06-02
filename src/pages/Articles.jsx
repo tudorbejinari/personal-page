@@ -7,7 +7,7 @@ export default function Articles() {
 
   return (
     <div>
-      <PageBanner src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1400&q=75&fit=crop&auto=format&fm=webp" />
+      <PageBanner src="https://images.unsplash.com/photo-1513346940221-6f673d962e97?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-3 max-w-2xl">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Writing</p>
