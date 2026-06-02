@@ -1,8 +1,8 @@
 const links = [
   {
     label: "Email",
-    value: "tudorwebsolutions@gmail.com",
-    href: "mailto:tudorwebsolutions@gmail.com",
+    value: "tudorbejinari@outlook.com",
+    href: "mailto:tudorbejinari@outlook.com",
     description: "Best for project inquiries and opportunities",
   },
   {
