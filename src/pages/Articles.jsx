@@ -2,8 +2,9 @@ import { articles } from "../data/articles"
 import ArticleCard from "../components/ArticleCard"
 
 export default function Articles() {
-  const featured = articles.filter((a) => a.featured)
-  const rest = articles.filter((a) => !a.featured)
+  const sorted = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date))
+  const featured = sorted.filter((a) => a.featured)
+  const rest = sorted.filter((a) => !a.featured)
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-14 sm:py-20 space-y-10 sm:space-y-12">
