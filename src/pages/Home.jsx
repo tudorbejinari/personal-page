@@ -108,6 +108,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Bug Bloodhound */}
+        <section className="space-y-4">
+          <div className="rounded-xl border border-navy-700/60 bg-navy-900 overflow-hidden">
+            <img
+              src="/bug-bloodhound.png"
+              alt="The Bug Bloodhound — QA detective illustration"
+              className="w-full"
+            />
+          </div>
+          <div className="rounded-xl border border-navy-700/60 bg-navy-900 px-6 py-8 flex flex-col sm:flex-row sm:items-center gap-2">
+            <p className="text-sm font-bold text-white shrink-0">The Bug Bloodhound</p>
+            <span className="hidden sm:block text-slate-700">—</span>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              My unofficial mascot, brought to life by AI. Generated from our team Slack channel
+              where "all software is broken until personally verified" became a running motto.
+            </p>
+          </div>
+        </section>
+
         {/* Achievements */}
         <section className="space-y-5">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { articles } from "../data/articles"
-import PageBanner from "../components/PageBanner"
 
 function Skeleton() {
   return (
@@ -59,8 +58,6 @@ export default function ArticleDetail() {
 
   return (
     <div>
-      {article.image && <PageBanner src={article.image} />}
-
       <div className="max-w-3xl mx-auto px-6 py-10 sm:py-14 overflow-x-hidden">
         <Link
           to="/articles"
@@ -83,6 +80,16 @@ export default function ArticleDetail() {
           <time className="block text-xs text-slate-600">{article.date}</time>
         </div>
 
+        {article.featuredImage && (
+          <div className="mb-8 sm:mb-10 rounded-xl overflow-hidden border border-navy-700/60">
+            <img
+              src={article.featuredImage}
+              alt={article.title}
+              className="w-full object-cover"
+            />
+          </div>
+        )}
+
         <article className="
           prose prose-invert prose-sm sm:prose-base max-w-none
           prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white
@@ -100,7 +107,22 @@ export default function ArticleDetail() {
           prose-table:text-sm prose-th:text-slate-300 prose-th:font-semibold prose-td:text-slate-400
           prose-hr:border-navy-700/60
         ">
-          {loading ? <Skeleton /> : <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>}
+          {loading ? <Skeleton /> : (
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                img: ({ src, alt }) => (
+                  <img
+                    src={src}
+                    alt={alt}
+                    style={{ display: "block", width: "100%", maxWidth: "100%", height: "auto", margin: "2rem 0", borderRadius: "0.75rem" }}
+                  />
+                ),
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          )}
         </article>
       </div>
     </div>

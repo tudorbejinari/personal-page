@@ -161,6 +161,10 @@ The tool records past fixes. AI analysis improves over time. Same root cause = i
 | Contacts page | **18,939px regression caught** — AI identified root cause + fix with high confidence |
 | QA review time | **1–2 days → ~15 minutes** |
 
+![MDC Migration Visual Comparison — 148 pages, 139 identical, 4 with differences](/visual-qa-dashboard.png)
+
+![Side-by-side visual diff — baseline vs migrated, with regression highlights](/visual-qa-comparison.png)
+
 ---
 
 ## What I Learned

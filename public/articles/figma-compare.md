@@ -91,6 +91,8 @@ The first design review had found a list of fixes. The team made them, and the t
 
 When I ran the tool against that screen, it independently flagged the same kinds of problems the designer had — including pointing at the exact colors the design system calls for. That second round is exactly what this tool is meant to prevent.
 
+![Figma vs Impl — real comparison report output](/figma-compare-report.png)
+
 ---
 
 ## Who it's for
