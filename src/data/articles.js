@@ -1,5 +1,14 @@
 export const articles = [
   {
+    id: "figma-compare",
+    title: "I Built a Tool That Checks if Our App Matches the Design",
+    summary: "A look at /figma-compare — a small skill that compares a live web page to its Figma design and tells you, in plain words, what's different and how to fix it.",
+    date: "2026-06-02",
+    tags: ["AI", "Design QA", "Figma", "Automation"],
+    file: "figma-compare.md",
+    featured: true,
+  },
+  {
     id: "ai-test-architecture",
     title: "Stop Letting AI Click Buttons — Make It Build Your Test Suite Instead",
     summary: "I built a multi-agent system where AI writes, debugs, and reviews Playwright tests. The tests run in CI with zero tokens at runtime. Here's the architecture.",
