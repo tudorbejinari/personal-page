@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { articles } from "../data/articles"
+import PageBanner from "../components/PageBanner"
 
 export default function ArticleDetail() {
   const { id } = useParams()
@@ -30,17 +31,7 @@ export default function ArticleDetail() {
 
   return (
     <div>
-      {article.image && (
-        <div className="relative w-full h-52 sm:h-72 overflow-hidden">
-          <img
-            src={article.image}
-            alt=""
-            loading="lazy"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/10" />
-        </div>
-      )}
+      {article.image && <PageBanner src={article.image} />}
 
       <div className="max-w-3xl mx-auto px-6 py-10 sm:py-14">
         <Link

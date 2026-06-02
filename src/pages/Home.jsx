@@ -1,5 +1,22 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import TechBadge from "../components/TechBadge"
+
+function HeroBg() {
+  const [loaded, setLoaded] = useState(false)
+  return (
+    <>
+      <img
+        src="https://images.unsplash.com/photo-1536242918817-db5e93c7a0e4?w=1400&q=70&fit=crop&auto=format&fm=webp"
+        alt=""
+        loading="eager"
+        onLoad={() => setLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover pointer-events-none select-none transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}
+      />
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: "rgba(2,8,16,0.92)" }} />
+    </>
+  )
+}
 
 const stack = [
   { label: "Playwright", variant: "blue" },
@@ -29,13 +46,7 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden">
       {/* Hero background image */}
-      <img
-        src="https://images.unsplash.com/photo-1510906594845-bc082582c8cc?w=1400&q=70&fit=crop&auto=format&fm=webp"
-        alt=""
-        loading="eager"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-      />
-      <div className="absolute inset-0 bg-navy-950/88 pointer-events-none" />
+      <HeroBg />
       {/* Base hero gradient */}
       <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
       {/* Ambient orbs */}
