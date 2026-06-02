@@ -46,18 +46,16 @@ export default function Contact() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 p-5 rounded-xl border border-navy-700/60 bg-navy-900 hover:border-sky-500/30 hover:shadow-card-hover transition-all duration-300"
+            className="group flex items-center justify-between gap-4 p-5 rounded-xl border border-navy-700/60 bg-navy-900 hover:border-sky-500/30 hover:shadow-card-hover active:scale-[0.99] transition-all duration-300"
           >
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest w-20 shrink-0">
-              {label}
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-white group-hover:text-sky-300 transition-colors duration-200 truncate">
+            <div className="min-w-0 flex-1 space-y-1">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">{label}</p>
+              <p className="text-sm font-medium text-white group-hover:text-sky-300 transition-colors duration-200 break-all">
                 {value}
               </p>
-              <p className="text-xs text-slate-600 mt-0.5 hidden sm:block">{description}</p>
+              <p className="text-xs text-slate-600 hidden sm:block">{description}</p>
             </div>
-            <span className="text-slate-600 group-hover:text-sky-400 transition-colors duration-200 shrink-0">→</span>
+            <span className="text-slate-600 group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all duration-200 shrink-0">→</span>
           </a>
         ))}
       </div>
