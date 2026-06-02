@@ -5,17 +5,45 @@ import remarkGfm from "remark-gfm"
 import { articles } from "../data/articles"
 import PageBanner from "../components/PageBanner"
 
+function Skeleton() {
+  return (
+    <div className="animate-pulse space-y-4">
+      <div className="h-8 bg-navy-800 rounded-lg w-3/4" />
+      <div className="space-y-2 pt-2">
+        <div className="h-4 bg-navy-800 rounded w-full" />
+        <div className="h-4 bg-navy-800 rounded w-5/6" />
+        <div className="h-4 bg-navy-800 rounded w-full" />
+        <div className="h-4 bg-navy-800 rounded w-4/6" />
+      </div>
+      <div className="h-6 bg-navy-800 rounded w-2/5 mt-8" />
+      <div className="space-y-2">
+        <div className="h-4 bg-navy-800 rounded w-full" />
+        <div className="h-4 bg-navy-800 rounded w-full" />
+        <div className="h-4 bg-navy-800 rounded w-3/4" />
+      </div>
+      <div className="h-6 bg-navy-800 rounded w-1/3 mt-8" />
+      <div className="space-y-2">
+        <div className="h-4 bg-navy-800 rounded w-5/6" />
+        <div className="h-4 bg-navy-800 rounded w-full" />
+        <div className="h-4 bg-navy-800 rounded w-2/3" />
+      </div>
+    </div>
+  )
+}
+
 export default function ArticleDetail() {
   const { id } = useParams()
   const article = articles.find((a) => a.id === id)
   const [content, setContent] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!article) return
+    setLoading(true)
     fetch(`/articles/${article.file}`)
       .then((res) => res.text())
-      .then(setContent)
-      .catch(() => setContent("Article content not found."))
+      .then((text) => { setContent(text); setLoading(false) })
+      .catch(() => { setContent("Article content not found."); setLoading(false) })
   }, [article])
 
   if (!article) return (
@@ -72,7 +100,7 @@ export default function ArticleDetail() {
           prose-table:text-sm prose-th:text-slate-300 prose-th:font-semibold prose-td:text-slate-400
           prose-hr:border-navy-700/60
         ">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          {loading ? <Skeleton /> : <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>}
         </article>
       </div>
     </div>
