@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tudorb.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://tudorb.com/about</loc><priority>0.8</priority></url>
-  <url><loc>https://tudorb.com/experience</loc><priority>0.8</priority></url>
-  <url><loc>https://tudorb.com/articles</loc><priority>0.9</priority></url>
-  <url><loc>https://tudorb.com/contact</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/figma-compare</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/ai-qa-toolkit</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/auto-test-plan</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/ai-specialists-team</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/pr-review-comments</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/catching-flaky-tests</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/ticket-to-test</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/ai-test-architecture</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/visual-qa-tool</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/ai-test-scenarios</loc><priority>0.7</priority></url>
-  <url><loc>https://tudorb.com/articles/reduce-flaky-tests</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://tudor-b.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://tudor-b.com/experience</loc><priority>0.8</priority></url>
+  <url><loc>https://tudor-b.com/articles</loc><priority>0.9</priority></url>
+  <url><loc>https://tudor-b.com/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/figma-compare</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/ai-qa-toolkit</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/auto-test-plan</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/ai-specialists-team</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/pr-review-comments</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/catching-flaky-tests</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/ticket-to-test</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/ai-test-architecture</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/visual-qa-tool</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/ai-test-scenarios</loc><priority>0.7</priority></url>
+  <url><loc>https://tudor-b.com/articles/reduce-flaky-tests</loc><priority>0.7</priority></url>
 </urlset>
