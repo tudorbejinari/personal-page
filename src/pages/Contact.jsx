@@ -24,7 +24,7 @@ import PageBanner from "../components/PageBanner"
 export default function Contact() {
   return (
     <div>
-      <PageBanner src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1400&q=75&fit=crop&auto=format&fm=webp" />
+      <PageBanner src="https://images.unsplash.com/photo-1614850523011-8f49ffc73908?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-4">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Contact</p>
