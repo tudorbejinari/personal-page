@@ -5,7 +5,7 @@ import PageBanner from "../components/PageBanner"
 export default function Experience() {
   return (
     <div>
-      <PageBanner src="https://images.unsplash.com/photo-1633869724970-aa75f83b8a89?w=1400&q=75&fit=crop&auto=format&fm=webp" />
+      <PageBanner src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-3 max-w-2xl">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Work</p>
