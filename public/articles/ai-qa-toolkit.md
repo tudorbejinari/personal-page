@@ -1,31 +1,96 @@
-# Building an AI-Powered QA Toolkit
+# The QA System I Built Inside My Terminal
 
-*A short intro to a set of small AI tools I've been building — each one takes a repetitive, easy-to-miss part of software quality off my plate.*
+*Not a chatbot. A closed loop — one work item in, tested, fixed, reviewed, and shipped out. Here's how the whole thing fits together.*
 
 ---
 
-## The idea
+## The problem with AI assistants for QA
 
-Most "AI assistant" demos try to do everything at once. I went the other way. I built a set of **small tools that each do one job well** — the boring, repetitive, or easy-to-miss work that slows a team down.
+Most AI tooling for QA works the same way: you paste something in, you get something back, and then you do the other nine steps by hand.
 
-A few principles guide all of them:
+A chatbot writes a test snippet. You fix it for 20 minutes because it used the wrong patterns. You figure out the locators yourself. You run it, it fails, you debug alone. You file the bug manually. You copy-paste the PR comment to resolve it.
 
-- **One job each.** A tool that does one thing is easier to trust than one that does ten.
-- **The AI proposes, I decide.** Nothing important happens without my okay.
-- **Built from real pain.** Each tool started from a task I was tired of doing by hand.
-- **It checks its work.** A fix isn't done until it's been tested.
+The value isn't the model. It's everything the model is connected to.
 
-## The toolkit so far
+## What I built instead
 
-- **Compare a design to the live app** — checks a built screen against its design and lists exactly what's off, with the precise value to fix. *(read more)*
-- **A team of AI specialists** — focused helpers that write tests, debug failures, and review code, each with its own mindset. *(read more)*
-- **Handle PR review comments** — reads each review comment, checks it against the real code, and fixes the valid ones after I approve. *(read more)*
-- **Catch flaky tests** — runs an unreliable test many times, reads what actually happened, and finds the real cause. *(read more)*
-- **Turn a ticket into a test** — reads a requirement and helps build a clean, working automated test from it. *(read more)*
-- **A test plan that writes itself** — reads a code change the moment it's opened and writes the QA test plan for it, including what might break. *(read more)*
+A system of 4 specialized agents, 10 one-word commands, and live connections to the tools already in use — Jira, GitHub, CI, Figma, BigQuery. Each command does one job, and the output of one feeds the next.
 
-## Where this is going
+```
+one work item in
+        ↓
+01 · read    /tests-from-ticket  →  ticket becomes test scenarios
+02 · write   senior-qa agent     →  scenarios become production specs
+03 · run     /pw-run             →  specs run, trace opens on failure
+04 · fix     /pw-flaky + debugger →  root cause found and fixed
+05 · ship    /pr-resolve         →  PR comments cleared and resolved
+06 · close   /create-bug         →  real bugs filed with full context
+        ↓
+shipped — out
+```
 
-This is an ongoing experiment. Each tool is a first iteration, and the best ideas for what comes next have come from people actually using them.
+## The four agents
 
-If any of these sound useful — or you'd build them differently — I'd love to hear.
+Each agent has a single job, its own tools, and its own rules. None of them do everything.
+
+**senior-qa** — writes and fixes tests. Turns a ticket or screen recording into production-ready Playwright specs and page objects. Locators in the constructor. No `waitForTimeout`. No force clicks. Won't finish until the spec runs green.
+
+**debugger** — hunts down flakes. Reads the trace file, finds the race condition or bad locator, fixes the root cause — not the timeout. Re-runs to prove the fix holds.
+
+**reviewer** — read-only gatekeeper. Rates every change 0–10 against the same rules a senior engineer would apply. Can only judge, cannot edit. A reviewer that can fix things isn't really reviewing.
+
+**api-test-creator** — builds API coverage. For flows where the UI isn't the right layer — backend-only paths, deprecated screens. Writes the endpoint file and the spec together.
+
+## The ten commands
+
+| Command | What it does |
+|---|---|
+| `/tests-from-ticket` | Reads a work item → drafts scenarios → records → writes specs |
+| `/tests-from-loom` | Reads a screen recording transcript → same output |
+| `/pw-codegen` | Launches Playwright recorder → converts raw clicks to clean page objects |
+| `/pw-run` | Runs tests the right way, picks env, opens trace on failure |
+| `/pw-flaky` | Runs N times, gathers stats, finds the root cause |
+| `/fix-ci` | Pulls overnight CI failures → one debugger agent per failing spec |
+| `/pr-resolve` | Fetches PR threads, fixes valid ones, replies, resolves |
+| `/figma-compare` | Screenshots live page + Figma → scored fidelity report |
+| `/create-bug` | Test failure → fully formatted bug report, fields pre-filled |
+| `/create-qa-task` | Automation work → tracking task with PR linked |
+
+## Live connections — reads the real thing
+
+The agents don't read what you paste. They read the source directly:
+
+```
+"what's the acceptance criteria on WEB-1024?"
+  atlassian → read ticket live
+✓ pulled: 3 acceptance criteria + QA plan
+
+$ /figma-compare WEB-1024
+  figma → design frame + measurements
+  chrome → screenshot the staging page
+✓ fidelity report: 3 spacing diffs flagged
+```
+
+Issue tracker, GitHub, CI traces, Figma — all read live, during the session.
+
+## The nightly pipeline
+
+The suite also runs on a schedule — every night, without anyone starting it:
+
+```
+cron · 8am → suite runs → results to analytics → alert to channel → trends on dashboard
+```
+
+By the time anyone opens their laptop, the pass/fail summary is already in the team channel. Failures trigger the debugger automatically. The trend dashboard builds from the nightly data — no manual reporting.
+
+## Why it works
+
+The agents are specialists, not generalists. A generalist asked to write, debug, and review its own work cuts corners in all three. A specialist with one job and the right tools does that job well.
+
+The commands are one-word triggers, not prompts. You don't describe what you want — you run the command and it knows what to do.
+
+The connections make it specific. Generic AI guesses from a paragraph. This reads the real ticket, the real PR, the real trace — and acts on what's actually there.
+
+---
+
+*Each tool in this system has its own article. Start with the architecture overview for the full technical picture, or browse by topic above.*

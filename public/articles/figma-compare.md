@@ -1,4 +1,4 @@
-# I Built a Tool That Checks if Our App Matches the Design
+# I Built a Tool That Checks if the App Matches the Design
 
 *A look at `/figma-compare` — a small skill that compares a live web page to its Figma design and tells you, in plain words, what's different and how to fix it.*
 
@@ -17,7 +17,7 @@ The big things are simple to spot — wrong button text, a missing field. But th
 - A divider line that should not be there.
 - Text that is left a few pixels off.
 
-These are easy to miss by eye. We caught some of them only after a *second* round of design review — which means extra tickets, extra back-and-forth, and slower delivery.
+These are easy to miss by eye. These are easy to miss by eye, and they often only get caught after a *second* round of design review — which means extra tickets, extra back-and-forth, and slower delivery.
 
 I wanted a way to catch them the first time.
 
@@ -52,7 +52,7 @@ There are three clever parts under the hood:
 Instead of someone exporting an image, the tool pulls the design straight from Figma. That means it knows the *exact* numbers — colors, fonts, spacing — not a rough guess from a picture.
 
 **2. It can open the real app by itself.**
-It reuses the same secure login our automated tests already use, so it can open a live page with no password sharing. Then it reads the *real* styles from the page — the actual padding, the actual color — and compares them to the design with real numbers. This is the part that catches "close but not exact."
+It reuses the same secure login the automated test suite already uses, so it can open a live page with no password sharing. Then it reads the *real* styles from the page — the actual padding, the actual color — and compares them to the design with real numbers. This is the part that catches "close but not exact."
 
 **3. It reads the ticket for you.**
 Give it a ticket number and it automatically pulls the design link, the acceptance criteria, and even the designer's review notes. So a single number is enough to start.
@@ -85,9 +85,9 @@ It never asks for your password — it reuses the login our tests already trust.
 
 ## A real example
 
-I tested it on a real piece of work — a redesign of one of our screens.
+I tested it on a real piece of work — a redesigned screen that had already gone through one full QA pass.
 
-The first design review had found a list of fixes. The team made them, and the ticket was marked done. But a *second* review later found another **14 issues** — and almost all of them were the quiet kind: padding, alignment, colors, fonts, and extra divider lines.
+The first design review had found a list of fixes. They were made, and the ticket was marked done. But a *second* review later found another **14 issues** — and almost all of them were the quiet kind: padding, alignment, colors, fonts, and extra divider lines.
 
 When I ran the tool against that screen, it independently flagged the same kinds of problems the designer had — including pointing at the exact colors the design system calls for. That second round is exactly what this tool is meant to prevent.
 

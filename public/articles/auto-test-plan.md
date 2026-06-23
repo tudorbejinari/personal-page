@@ -25,7 +25,25 @@ It reads the *actual* code change and produces a full plan, including:
 
 Then it posts the plan where the team already works, so it's waiting for QA when they pick up the change.
 
-## How it works (in simple terms)
+## How it works
+
+```
+$ /test-plan PR-88
+  gh → read diff (9 files changed)
+  reading ticket + acceptance criteria
+
+  Overview: checkout discount flow — label renamed,
+  dialog behavior updated, 2 screens affected
+
+✓ Where to test: Settings → Discounts → Apply Discount
+✓ Setup: discount feature flag must be enabled
+✓ Scenarios: 5 drafted (happy path + 2 edge cases + 2 error states)
+✓ Regression: order summary, payment confirmation flow
+△ Open question: PR renames discount label in checkout
+  but not in order summary — intentional?
+
+✓ plan posted to PR thread
+```
 
 **It reads the real change, not just the description.**
 This is the key. A description says what was *meant* to happen. The code shows what *actually* happened. By reading the change itself, the plan reflects reality — including small side-effects a person might overlook.

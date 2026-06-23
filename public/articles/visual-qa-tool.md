@@ -1,6 +1,6 @@
-# How I Built an AI-Powered Visual QA Tool for Our Angular Migration
+# How I Built an AI-Powered Visual QA Tool for a Large Angular Migration
 
-We are migrating a large Angular app from legacy Material components to the new MDC (Material Design Components). This means hundreds of pages could break visually — buttons shift, tables lose padding, dialogs change size.
+A large Angular app I was working on was migrating from legacy Material components to MDC (Material Design Components). That means hundreds of pages could break visually — buttons shift, tables lose padding, dialogs change size.
 
 **The old way:** QA opens two environments side by side, clicks through every page, takes notes, files bugs. This takes 1–2 days per migration batch.
 

@@ -33,7 +33,7 @@ const stack = [
 const achievements = [
   { metric: "80%", label: "Reduction in flaky tests", color: "blue" },
   { metric: "33%", label: "Faster test suite runs", color: "gold" },
-  { metric: "10x", label: "Impact with AI-assisted testing", color: "violet" },
+  { metric: "90%", label: "Faster visual regression QA", color: "violet" },
 ]
 
 const styleMap = {
