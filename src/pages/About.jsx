@@ -7,20 +7,20 @@ const specialties = [
 
 const aiCards = [
   {
-    title: "Multi-agent test systems",
-    body: "Built pipelines where AI writes, debugs, and reviews Playwright tests end-to-end — not as a demo, as a daily workflow.",
+    title: "A closed loop — not a snippet generator",
+    body: "4 agents, 10 commands, a nightly pipeline. A work item comes in, gets read, tested, debugged, reviewed, and shipped — the output of each step feeds the next. AI writes and maintains the code. Tests run in CI with zero tokens at runtime.",
   },
   {
-    title: "Visual regression analysis",
-    body: "Tooling where the Claude API compares UI states across environments and surfaces code fix suggestions automatically.",
+    title: "Reads the real thing, not a copy",
+    body: "The agents read live tickets from the issue tracker, open the real PR diff, pull the actual CI trace. No copy-paste. No snapshot from five minutes ago. Live connections to the tools already in use — that's what makes the output specific instead of generic.",
   },
   {
-    title: "Daily force multipliers",
-    body: "Cursor, Claude CLI, Devin.ai, and GitHub Copilot — used as engineering judgment amplifiers, not autocomplete shortcuts.",
+    title: "Visual regression + design fidelity",
+    body: "Tooling where the Claude API compares UI states across environments and surfaces root cause suggestions automatically. A separate design-compare tool pulls the Figma file and screenshots the live page — pixel-level diff with a written report.",
   },
   {
     title: "The distinction that matters",
-    body: "I don't use AI to click around an app and hope for the best. I use it to build better test infrastructure.",
+    body: "Everyone has AI now. Few have it wired into the whole job. A chatbot guesses code from a paragraph. This system reads the real ticket, opens the real PR, and pulls last night's real CI failures — then acts on them.",
   },
 ]
 

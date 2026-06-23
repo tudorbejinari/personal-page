@@ -14,12 +14,24 @@ Turning that into a real automated test is more work than it sounds. You re-read
 
 A flow that takes the ticket most of the way to a finished test:
 
+```
+$ /tests-from-ticket WEB-1024
+  acli → read ticket + acceptance criteria
+  drafted 6 scenarios + recording checklist
+  launch codegen → you record once
+✓ CheckoutPage.js  (locators in constructor)
+✓ checkoutTests.spec.js  (6 tests)
+✓ 0 waitForTimeout · 0 force · data-testid
+```
+
+The four steps:
+
 1. **Reads the ticket** and turns it into clear test scenarios — the things that should be checked.
 2. **Gives me a recording checklist** — a simple list of what to click through.
 3. **Records my clicks** as I walk through the screen once.
 4. **Converts that raw recording** into a clean, maintainable test.
 
-## How it works (in simple terms)
+## How it works
 
 **The ticket becomes a plan.**
 First it reads the requirement and writes out, in plain language, the scenarios worth testing. This catches the "wait, we should also check this" cases before any code is written.
@@ -28,7 +40,15 @@ First it reads the requirement and writes out, in plain language, the scenarios 
 Instead of guessing how the screen is built, I click through it once and the tool records exactly what I did. Real clicks, real fields — no guesswork.
 
 **The messy recording becomes a clean test.**
-Raw recordings are ugly and fragile — they break the moment anything on the page shifts. The tool rewrites them to follow good habits: stable ways of finding elements, and no flaky "just wait a second" pauses. The result is a test you'd be happy to keep.
+Raw recordings are ugly and fragile — they break the moment anything on the page shifts. The tool rewrites them to follow good habits: stable ways of finding elements, no flaky "just wait a second" pauses. The result is a test you'd be happy to keep.
+
+## Three ways to start
+
+| Command | Starting point | What happens |
+|---|---|---|
+| `/tests-from-ticket` | Work item | Reads acceptance criteria, drafts scenarios, records, converts |
+| `/tests-from-loom` | Screen recording | Reads narrated transcript, plus the ticket's criteria |
+| `/pw-codegen` | Live app | You click the flow once — gets clean page objects back |
 
 ## The benefits
 
@@ -43,11 +63,3 @@ Raw recordings are ugly and fragile — they break the moment anything on the pa
 ## A real example
 
 I took a normal requirement, ran it through the flow, and got back a tidy list of scenarios and a checklist. I clicked through the screen once to record the steps, and the tool turned that into a clean, working test — in a fraction of the time it usually takes to write one by hand, and without the fragile shortcuts a raw recording leaves behind.
-
-## Who it's for
-
-QA engineers and developers who write automated tests — especially anyone who finds the "blank file" stage the slowest part.
-
-## This is just the start
-
-This is a first version. I'd like it to handle more complex flows and edge cases on its own, and to need less hand-holding during the recording step. If you try it, tell me where it saved you time and where it still needs you to step in.
