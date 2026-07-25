@@ -29,7 +29,7 @@ export default function Navbar() {
             to="/"
             className="font-semibold text-white text-base tracking-tight hover:text-sky-400 transition-colors duration-200"
           >
-            Tudor Bejinari
+            Tudor B.
           </Link>
 
           {/* Desktop nav */}
