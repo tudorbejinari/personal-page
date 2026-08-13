@@ -9,28 +9,30 @@ export default function ProjectCard({ project }) {
   return (
     <div
       onClick={() => setOpen((o) => !o)}
-      className="group rounded-xl border border-navy-700/80 bg-navy-900 p-6 flex flex-col gap-4 hover:border-sky-500/30 hover:shadow-card-hover transition-all duration-300 cursor-pointer select-none"
+      className="group relative rounded-2xl glass shadow-card p-6 flex flex-col gap-4 overflow-hidden hover:border-white/[0.14] hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 cursor-pointer select-none"
     >
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="text-base font-semibold text-white leading-snug">{title}</h3>
-        <span className={`text-slate-500 group-hover:text-sky-400 transition-all duration-200 shrink-0 mt-0.5 text-sm ${open ? "rotate-90" : ""}`}>
+      <div className="absolute inset-0 bg-card-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+      <div className="relative flex items-start justify-between gap-3">
+        <h3 className="font-display text-[17px] font-semibold text-white leading-snug tracking-tight">{title}</h3>
+        <span className={`grid place-items-center w-7 h-7 rounded-full bg-white/[0.05] border border-white/10 text-slate-400 group-hover:text-sky-300 group-hover:border-sky-400/40 transition-all duration-300 shrink-0 text-sm ${open ? "rotate-90" : ""}`}>
           →
         </span>
       </div>
 
-      <div>
-        <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5">Problem</p>
+      <div className="relative">
+        <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1.5">Problem</p>
         <p className="text-slate-300 text-sm leading-relaxed">{problem}</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-1.5">
+      <div className="relative flex flex-wrap items-center gap-1.5">
         {tools.map((t) => <TechBadge key={t} label={t} />)}
       </div>
 
       {open && (
-        <div className="space-y-4 pt-1 border-t border-navy-700/60" onClick={(e) => e.stopPropagation()}>
+        <div className="relative space-y-4 pt-4 border-t border-white/[0.08]" onClick={(e) => e.stopPropagation()}>
           <div>
-            <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5">What I built</p>
+            <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1.5">What I built</p>
             <p className="text-slate-300 text-sm leading-relaxed">{automated}</p>
           </div>
 
@@ -44,11 +46,11 @@ export default function ProjectCard({ project }) {
           </ul>
 
           {(article || github) && (
-            <div className="flex gap-4 pt-1 border-t border-navy-700/60">
+            <div className="flex gap-4 pt-3 border-t border-white/[0.08]">
               {article && (
                 <Link
                   to={`/articles/${article}`}
-                  className="text-sm text-sky-400 hover:text-sky-300 font-medium transition-colors duration-200"
+                  className="text-sm text-sky-300 hover:text-sky-200 font-medium transition-colors duration-200"
                 >
                   Read full write-up →
                 </Link>
@@ -58,7 +60,7 @@ export default function ProjectCard({ project }) {
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-sky-400 hover:text-sky-300 font-medium transition-colors duration-200"
+                  className="text-sm text-sky-300 hover:text-sky-200 font-medium transition-colors duration-200"
                 >
                   View on GitHub →
                 </a>

@@ -8,8 +8,8 @@ export default function Experience() {
       <PageBanner src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-3 max-w-2xl">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Work</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Experience & Projects</h1>
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Work</p>
+        <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tightest">Experience &amp; Projects</h1>
         <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
           Real problems. Real tools. Every project below is production work with measurable outcomes.
         </p>

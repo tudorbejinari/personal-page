@@ -118,7 +118,7 @@ export default function About() {
           {specialties.map((s) => (
             <span
               key={s}
-              className="px-3 py-1 rounded-full text-xs font-medium bg-navy-800 border border-navy-700/60 text-slate-400"
+              className="px-3 py-1 rounded-full text-xs font-medium glass text-slate-300"
             >
               {s}
             </span>
@@ -126,7 +126,7 @@ export default function About() {
         </div>
 
         <div className="space-y-4 max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+          <h2 className="font-display text-2xl sm:text-4xl font-bold text-white leading-[1.15] tracking-tight">
             I build automated test systems that are fast, reliable, and designed to scale —
             then I use AI to make them faster to build and easier to maintain.
           </h2>
@@ -154,24 +154,24 @@ export default function About() {
 
       {/* How I apply AI */}
       <section className="space-y-6">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">
           How I apply AI — specifically
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {aiCards.map(({ title, body }) => (
             <div
               key={title}
-              className="rounded-xl border border-navy-700/60 bg-navy-900 p-5 space-y-2 relative overflow-hidden"
+              className="group rounded-2xl glass shadow-card p-5 space-y-2 relative overflow-hidden hairline-top hover:border-white/[0.14] hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-sky-500/40 via-violet-500/20 to-transparent" />
-              <p className="text-sm font-semibold text-white">{title}</p>
-              <p className="text-sm text-slate-400 leading-relaxed">{body}</p>
+              <p className="relative text-sm font-semibold text-white">{title}</p>
+              <p className="relative text-sm text-slate-400 leading-relaxed">{body}</p>
             </div>
           ))}
         </div>
 
-        <div className="rounded-xl border border-sky-500/20 bg-sky-500/5 px-6 py-5">
-          <p className="text-base sm:text-lg font-medium text-slate-200 leading-relaxed">
+        <div className="relative rounded-2xl glass shadow-card px-6 py-6 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.08] via-transparent to-violet-500/[0.06] pointer-events-none" />
+          <p className="relative text-base sm:text-lg font-medium text-slate-200 leading-relaxed">
             My goal is to operate at the intersection of QA, automation engineering, and AI —
             where 10x impact is achievable without sacrificing the determinism and reliability
             that make tests worth running.
@@ -181,10 +181,10 @@ export default function About() {
 
       {/* Work Experience */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Work Experience</p>
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Work Experience</p>
         <div className="space-y-4">
           {experience.map(({ company, type, location, roles }) => (
-            <div key={company} className="rounded-xl border border-navy-700/60 bg-navy-900 p-5 space-y-4">
+            <div key={company} className="rounded-2xl glass shadow-card p-5 space-y-4 hover:border-white/[0.12] transition-colors duration-300">
               <div>
                 <p className="text-sm font-semibold text-white">{company}</p>
                 <p className="text-xs text-slate-500 mt-0.5">{type} · {location}</p>
@@ -205,8 +205,8 @@ export default function About() {
 
       {/* Education */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Education</p>
-        <div className="divide-y divide-navy-700/60">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Education</p>
+        <div className="divide-y divide-white/[0.06]">
           {education.map(({ title, institution, period, note }) => (
             <div key={title} className="py-4 space-y-0.5">
               <p className="text-sm font-semibold text-white leading-snug">{title}</p>
@@ -220,8 +220,8 @@ export default function About() {
 
       {/* Tools */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Tools & Stack</p>
-        <div className="divide-y divide-navy-700/60">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Tools &amp; Stack</p>
+        <div className="divide-y divide-white/[0.06]">
           {tools.map(({ category, items }) => (
             <div key={category} className="py-3.5 flex flex-col sm:flex-row sm:gap-6 gap-1 text-sm">
               <span className="text-slate-500 sm:w-32 sm:shrink-0 font-medium">{category}</span>

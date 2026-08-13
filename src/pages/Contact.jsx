@@ -27,14 +27,14 @@ export default function Contact() {
       <PageBanner src="https://images.unsplash.com/photo-1563089145-599997674d42?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-4">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Contact</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Get In Touch</h1>
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Contact</p>
+        <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tightest">Get In Touch</h1>
         <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-md">
           Open to QA roles, consulting, and conversations about testing and AI.
           I respond within 24 hours.
         </p>
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass text-emerald-300">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.6)] animate-pulse" />
           Available for opportunities
         </div>
       </div>
@@ -46,16 +46,17 @@ export default function Contact() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between gap-4 p-5 rounded-xl border border-navy-700/60 bg-navy-900 hover:border-sky-500/30 hover:shadow-card-hover active:scale-[0.99] transition-all duration-300"
+            className="group relative flex items-center justify-between gap-4 p-5 rounded-2xl glass shadow-card overflow-hidden hover:border-white/[0.14] hover:shadow-card-hover hover:-translate-y-1 active:scale-[0.99] transition-all duration-300"
           >
-            <div className="min-w-0 flex-1 space-y-1">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">{label}</p>
+            <div className="absolute inset-0 bg-card-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="relative min-w-0 flex-1 space-y-1">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.18em]">{label}</p>
               <p className="text-sm font-medium text-white group-hover:text-sky-300 transition-colors duration-200 break-all">
                 {value}
               </p>
               <p className="text-xs text-slate-600 hidden sm:block">{description}</p>
             </div>
-            <span className="text-slate-600 group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all duration-200 shrink-0">→</span>
+            <span className="relative text-slate-600 group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all duration-200 shrink-0">→</span>
           </a>
         ))}
       </div>
