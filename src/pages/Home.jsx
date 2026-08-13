@@ -1,37 +1,5 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import TechBadge from "../components/TechBadge"
-
-function HeroBg() {
-  const [loaded, setLoaded] = useState(false)
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-      {/* Cinematic photograph — visible, not smothered */}
-      <img
-        src="https://images.unsplash.com/photo-1536242918817-db5e93c7a0e4?w=1600&q=80&fit=crop&auto=format&fm=webp"
-        alt=""
-        loading="eager"
-        onLoad={() => setLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ${loaded ? "opacity-60" : "opacity-0"}`}
-      />
-      {/* Directional wash: darker on the left where the copy sits, fading down to the base */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(105deg, rgba(4,6,12,0.94) 0%, rgba(4,6,12,0.72) 42%, rgba(4,6,12,0.45) 100%)" }}
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-2/3"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(4,6,12,0.85) 65%, #04060C 100%)" }}
-      />
-      {/* Brand watermark glyph */}
-      <div className="absolute -right-16 top-4 sm:right-4 sm:top-2 text-[22rem] sm:text-[30rem] leading-none font-display font-bold text-white/[0.025] select-none animate-float-slow">
-        ✳
-      </div>
-      {/* Warm ember floor — the premium glow from the reference */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-warm-floor" />
-    </div>
-  )
-}
 
 const stack = [
   { label: "Playwright", variant: "blue" },
@@ -57,60 +25,90 @@ const styleMap = {
   violet: { text: "text-violet-400", ring: "group-hover:border-violet-500/40", glow: "from-violet-500/[0.08]" },
 }
 
+// Luminous blue gradient: deep navy at top → azure → warm sandy floor, with a
+// soft light bloom and a warm glow layered on top (matches the reference hero).
+const HERO_BG =
+  "radial-gradient(72% 46% at 50% 112%, rgba(228,197,142,0.55) 0%, rgba(228,197,142,0) 60%)," +
+  "radial-gradient(60% 48% at 50% 84%, rgba(200,224,246,0.34) 0%, rgba(200,224,246,0) 66%)," +
+  "linear-gradient(180deg, #060f1e 0%, #0b2848 20%, #164572 42%, #245f8e 62%, #3d739c 82%, #8f9488 100%)"
+
 export default function Home() {
   return (
     <div className="relative">
-      {/* HERO — slides up under the translucent floating nav */}
-      <section className="relative -mt-[4.75rem] grain overflow-hidden">
-        <HeroBg />
-        {/* Aurora glow */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[130%] h-[520px] bg-aurora blur-[90px] opacity-70 animate-aurora-drift pointer-events-none" />
+      {/* HERO — luminous blue field, bottom-anchored, slides under the floating nav */}
+      <section
+        className="relative -mt-[4.75rem] grain overflow-hidden"
+        style={{ background: HERO_BG }}
+      >
+        {/* Giant faded brand watermark */}
+        <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 text-[24rem] sm:text-[34rem] leading-none font-display font-bold text-white/[0.055] select-none pointer-events-none animate-float-slow">
+          ✳
+        </div>
 
-        <div className="relative z-[2] max-w-5xl mx-auto px-6 pt-32 sm:pt-44 pb-16 sm:pb-28">
-          <div className="max-w-2xl space-y-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass text-emerald-300 animate-fade-up">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.6)] animate-pulse" />
-              Open to opportunities
-            </div>
-
-            <h1 className="font-display text-[2.75rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] font-bold tracking-tightest text-white animate-fade-up" style={{ animationDelay: "0.05s" }}>
+        <div className="relative z-[2] max-w-6xl mx-auto px-6 min-h-[86vh] flex flex-col justify-end pt-32 pb-14 sm:pb-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-end">
+            {/* Headline — lower left */}
+            <h1 className="font-display text-[2.9rem] leading-[1.0] sm:text-6xl lg:text-[4.5rem] font-bold tracking-tightest text-white animate-fade-up">
               QA Automation
               <br />
               <span className="text-muted-fade">that ships itself.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-300/90 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              I build reliable automated test systems with Playwright and JavaScript —
-              then wire in AI so they write, debug, and maintain themselves.
-            </p>
-
-            <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-xl animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              Working at the intersection of QA engineering and AI — test infrastructure
-              that scales, automation baked into CI/CD, and tools like the Claude API and
-              Cursor that 10x impact without sacrificing reliability.
-            </p>
-
-            <div className="flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              {stack.map(({ label, variant }) => (
-                <TechBadge key={label} label={label} variant={variant} />
-              ))}
+            {/* Blurb + CTAs — lower right */}
+            <div className="lg:justify-self-end lg:max-w-sm space-y-5 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              {/* Availability badge — hidden for now
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass text-emerald-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Open to opportunities
+              </div>
+              */}
+              <p className="text-[15px] sm:text-base text-slate-100/90 leading-relaxed">
+                I build reliable automated test systems with Playwright and JavaScript —
+                then wire in AI so they write, debug, and maintain themselves.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/articles" className="btn-pill">
+                  Read my articles
+                  <span aria-hidden>→</span>
+                </Link>
+                <Link to="/experience" className="btn-ghost">
+                  View projects
+                </Link>
+              </div>
             </div>
+          </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2 animate-fade-up" style={{ animationDelay: "0.25s" }}>
-              <Link to="/articles" className="btn-pill">
-                Read my articles
-                <span aria-hidden>→</span>
-              </Link>
-              <Link to="/experience" className="btn-ghost">
-                View projects
-              </Link>
-            </div>
+          {/* Floating glass command pill — reference's bottom capsule */}
+          <div className="mt-12 sm:mt-14 flex justify-center animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <Link
+              to="/contact"
+              className="group flex items-center gap-3 rounded-full glass-strong shadow-card pl-4 pr-2 py-2 hover:-translate-y-0.5 transition-transform duration-300"
+            >
+              <span className="text-lg leading-none">✳</span>
+              <span className="text-sm text-slate-100/90">Let's build something reliable</span>
+              <span className="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-sky-300 via-white to-gold-300 text-navy-950 group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CONTENT */}
-      <div className="relative max-w-5xl mx-auto px-6 pb-24 space-y-20 sm:space-y-28">
+      <div className="relative max-w-5xl mx-auto px-6 pt-20 sm:pt-28 pb-24 space-y-20 sm:space-y-28">
+
+        {/* Tech stack strip */}
+        <section className="space-y-5">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">The Stack</p>
+          <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-2xl">
+            Working at the intersection of QA engineering and AI — test infrastructure that scales,
+            automation baked into CI/CD, and tools like the Claude API and Cursor that 10x impact
+            without sacrificing reliability.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {stack.map(({ label, variant }) => (
+              <TechBadge key={label} label={label} variant={variant} />
+            ))}
+          </div>
+        </section>
 
         {/* Bug Bloodhound */}
         <section className="space-y-4">
@@ -152,18 +150,6 @@ export default function Home() {
               )
             })}
           </div>
-        </section>
-
-        {/* Floating glass command bar — the reference's bottom capsule */}
-        <section>
-          <Link
-            to="/contact"
-            className="group relative mx-auto max-w-md flex items-center gap-3 rounded-full glass-strong shadow-card px-5 py-3 hover:-translate-y-0.5 transition-transform duration-300"
-          >
-            <span className="grid place-items-center w-7 h-7 rounded-full bg-gradient-to-br from-sky-400 to-violet-500 text-navy-950 text-sm shadow-glow-blue">✳</span>
-            <span className="flex-1 text-sm text-slate-300">Let's build something reliable together</span>
-            <span className="grid place-items-center w-8 h-8 rounded-full bg-white text-navy-950 group-hover:translate-x-0.5 transition-transform">→</span>
-          </Link>
         </section>
 
       </div>

@@ -33,10 +33,12 @@ export default function Contact() {
           Open to QA roles, consulting, and conversations about testing and AI.
           I respond within 24 hours.
         </p>
+        {/* Availability badge — hidden for now
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass text-emerald-300">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.6)] animate-pulse" />
           Available for opportunities
         </div>
+        */}
       </div>
 
       <div className="space-y-3">

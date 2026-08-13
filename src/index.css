@@ -96,7 +96,7 @@
 @layer utilities {
   /* Two-tone headline secondary phrase — the signature "muted continuation" */
   .text-muted-fade {
-    color: #55617a;
+    color: #9aa7bd;
   }
 
   .text-gradient-blue {
