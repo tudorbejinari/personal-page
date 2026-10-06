@@ -109,7 +109,7 @@ import PageBanner from "../components/PageBanner"
 export default function About() {
   return (
     <div>
-      <PageBanner src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1400&q=75&fit=crop&auto=format&fm=webp" />
+      <PageBanner src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-16 sm:space-y-20">
 
       {/* Hero intro */}
