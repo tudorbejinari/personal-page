@@ -16,7 +16,7 @@ export default function PageBanner({ src }) {
       {/* Cinematic fade to base */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(4,6,12,0.78) 0%, rgba(4,6,12,0.30) 45%, rgba(4,6,12,0.86) 82%, #04060C 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(10,9,8,0.80) 0%, rgba(10,9,8,0.28) 45%, rgba(10,9,8,0.88) 82%, #0A0908 100%)" }}
       />
     </div>
   )

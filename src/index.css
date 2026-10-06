@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,43 +12,57 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #04060C;
+    background-color: #0A0908;
   }
 
   body {
-    background-color: #04060C;
-    /* Subtle vertical wash so the page never reads as a flat black rectangle */
-    background-image: radial-gradient(120% 60% at 50% -10%, rgba(30,140,235,0.10) 0%, transparent 55%);
+    background-color: #0A0908;
+    color: #CEC6B6;
+    /* Warm vertical wash so the page never reads as a flat black rectangle */
+    background-image: radial-gradient(120% 60% at 50% -10%, rgba(255,106,44,0.09) 0%, transparent 55%);
     background-attachment: fixed;
+    position: relative;
+  }
+
+  /* Fine film grain over the whole page — the premium, non-flat finish */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   ::selection {
-    background-color: rgba(30, 140, 235, 0.32);
-    color: #f1f5f9;
+    background-color: rgba(255, 106, 44, 0.30);
+    color: #F3EFE7;
   }
 
   h1, h2, h3 {
-    font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+    font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
   }
 }
 
 @layer components {
-  /* Frosted-glass surface — the signature panel treatment */
+  /* Frosted-glass surface — warm, low-key translucency over the ink ground */
   .glass {
-    background-color: rgba(13, 18, 32, 0.55);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(26, 23, 19, 0.55);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .glass-strong {
-    background-color: rgba(8, 11, 20, 0.72);
-    backdrop-filter: blur(28px) saturate(150%);
-    -webkit-backdrop-filter: blur(28px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    background-color: rgba(16, 14, 11, 0.74);
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Solid white pill — primary CTA, matches the reference "Get started" */
+  /* Warm cream pill — primary CTA (skild's light "Get started" capsule) */
   .btn-pill {
     display: inline-flex;
     align-items: center;
@@ -58,14 +72,34 @@
     border-radius: 9999px;
     font-weight: 600;
     font-size: 0.875rem;
-    color: #060810;
-    background: linear-gradient(180deg, #ffffff 0%, #e9edf5 100%);
+    color: #17140F;
+    background: linear-gradient(180deg, #F7F3EB 0%, #E6DFD1 100%);
     box-shadow: 0 1px 0 0 rgba(255,255,255,0.6) inset, 0 10px 24px -10px rgba(0,0,0,0.6);
     transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease;
   }
   .btn-pill:hover {
     transform: translateY(-1px);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.7) inset, 0 16px 34px -12px rgba(30,140,235,0.4);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.7) inset, 0 16px 34px -12px rgba(255,106,44,0.45);
+  }
+
+  /* Solid amber pill — alternate primary for the warmest call to action */
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.35rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #1A0E06;
+    background: linear-gradient(180deg, #FF8A4C 0%, #FF6A2C 100%);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.35) inset, 0 10px 28px -10px rgba(255,106,44,0.55);
+    transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease;
+  }
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.45) inset, 0 18px 38px -12px rgba(255,106,44,0.7);
   }
 
   /* Translucent ghost pill — secondary CTA */
@@ -78,8 +112,8 @@
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.875rem;
-    color: #e2e8f0;
-    background-color: rgba(255, 255, 255, 0.04);
+    color: #E4DED2;
+    background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -87,40 +121,66 @@
   }
   .btn-ghost:hover {
     transform: translateY(-1px);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.22);
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 106, 44, 0.35);
     color: #ffffff;
+  }
+
+  /* Numbered section marker — circular amber-ringed badge (skild signature) */
+  .sec-marker {
+    display: inline-grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 9999px;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #FFB488;
+    background: radial-gradient(120% 120% at 30% 20%, rgba(255,106,44,0.18), rgba(255,106,44,0.04));
+    border: 1px solid rgba(255, 106, 44, 0.35);
+    box-shadow: 0 0 20px -6px rgba(255, 106, 44, 0.45);
   }
 }
 
 @layer utilities {
-  /* Two-tone headline secondary phrase — the signature "muted continuation" */
-  .text-muted-fade {
-    color: #9aa7bd;
+  /* The signature editorial emphasis — italic serif accent word in headlines */
+  .emphasis {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
   }
 
+  /* Muted continuation phrase in two-tone headlines */
+  .text-muted-fade {
+    color: #8E8575;
+  }
+
+  /* Warm accent gradient for text (name kept from the old blue system) */
   .text-gradient-blue {
-    background: linear-gradient(135deg, #8CCBFF 0%, #4DA8F5 55%, #A99BF7 100%);
+    background: linear-gradient(135deg, #FFB488 0%, #FF6A2C 55%, #E0A63A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #F5C15C 0%, #FBD98B 100%);
+    background: linear-gradient(135deg, #EFC45C 0%, #F7D98B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Fine film grain — lifts flat dark surfaces into something premium */
+  /* Localised film grain for individual panels */
   .grain::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.45;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -136,8 +196,14 @@
     left: 1.25rem;
     right: 1.25rem;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(30,140,235,0.5) 20%, rgba(139,124,240,0.3) 60%, transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,106,44,0.5) 20%, rgba(224,166,58,0.3) 60%, transparent);
   }
+}
+
+/* Keep app content above the global grain layer */
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 /* Hide scrollbar on tag rows */
@@ -171,14 +237,14 @@ html, body {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #04060C;
+  background: #0A0908;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A2233;
+  background: #2A2620;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1E8CEB;
+  background: #FF6A2C;
 }
 
 /* Respect reduced-motion preferences everywhere */

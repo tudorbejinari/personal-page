@@ -10,7 +10,7 @@ const links = [
 
 function Mark() {
   return (
-    <span className="grid place-items-center w-7 h-7 rounded-lg bg-gradient-to-br from-sky-400 to-violet-500 text-[13px] font-bold text-navy-950 shadow-glow-blue">
+    <span className="grid place-items-center w-7 h-7 rounded-lg bg-gradient-to-br from-sky-400 via-sky-500 to-gold-500 text-[13px] font-display font-bold text-navy-950 shadow-glow-blue">
       T
     </span>
   )
@@ -53,8 +53,8 @@ export default function Navbar() {
               className="flex items-center gap-2.5 group"
             >
               <Mark />
-              <span className="font-semibold text-white text-[15px] tracking-tight group-hover:text-sky-300 transition-colors duration-200">
-                Tudor<span className="text-slate-500">.b</span>
+              <span className="font-display font-semibold text-slate-100 text-[15px] tracking-tight group-hover:text-sky-300 transition-colors duration-200">
+                Tudor<span className="text-sky-500">.b</span>
               </span>
             </Link>
 

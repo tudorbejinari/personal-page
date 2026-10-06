@@ -126,8 +126,9 @@ export default function About() {
         </div>
 
         <div className="space-y-4 max-w-2xl">
-          <h2 className="font-display text-2xl sm:text-4xl font-bold text-white leading-[1.15] tracking-tight">
-            I build automated test systems that are fast, reliable, and designed to scale —
+          <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-100 leading-[1.15] tracking-tight">
+            I build automated test systems that are fast, reliable, and designed to
+            {" "}<span className="emphasis text-gradient-blue">scale</span> —
             then I use AI to make them faster to build and easier to maintain.
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-medium">

@@ -28,10 +28,10 @@ export default function Contact() {
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-4">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Contact</p>
-        <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tightest">Get In Touch</h1>
+        <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-100 tracking-tightest">Get in <span className="emphasis text-gradient-blue">touch</span></h1>
         <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-md">
-          Open to QA roles, consulting, and conversations about testing and AI.
-          I respond within 24 hours.
+          Always happy to talk testing, automation, and AI — from consulting to
+          technical deep-dives. I respond within 24 hours.
         </p>
         {/* Availability badge — hidden for now
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass text-emerald-300">

@@ -9,7 +9,7 @@ export default function Experience() {
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-3 max-w-2xl">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Work</p>
-        <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tightest">Experience &amp; Projects</h1>
+        <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-100 tracking-tightest">Experience &amp; <span className="emphasis text-gradient-blue">projects</span></h1>
         <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
           Real problems. Real tools. Every project below is production work with measurable outcomes.
         </p>

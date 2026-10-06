@@ -5,51 +5,76 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        // Body — clean, neutral
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter Tight", "Inter", "system-ui", "sans-serif"],
+        // Display — distinctive modern grotesque (skild-style headlines)
+        display: ["Space Grotesk", "Inter Tight", "system-ui", "sans-serif"],
+        // Emphasis — editorial italic serif, the signature "accent word" treatment
+        serif: ["Instrument Serif", "Georgia", "serif"],
       },
       letterSpacing: {
-        tightest: "-0.045em",
+        tightest: "-0.04em",
       },
       colors: {
-        // Deep, blue-tinted near-black base — the "cinematic midnight" ground
+        // Warm near-black "ink" ground — replaces the old blue-tinted navy.
+        // Token name kept so existing bg-navy-* classes adopt the new warmth.
         navy: {
-          950: "#04060C",
-          900: "#080B14",
-          800: "#0D1220",
-          700: "#1A2233",
-          600: "#28324a",
+          950: "#0A0908",
+          900: "#100E0B",
+          800: "#1A1713",
+          700: "#2A2620",
+          600: "#3A352D",
         },
-        // Refined azure accent — cooler, cleaner than the old sky
+        // Burnt-amber accent — the single signature hue (skild's warm orange).
+        // Token name "sky" kept so existing accent classes turn amber automatically.
         sky: {
-          300: "#8CCBFF",
-          400: "#4DA8F5",
-          500: "#1E8CEB",
-          600: "#0E6FCC",
+          100: "#FFE7D6",
+          200: "#FFD2B3",
+          300: "#FFB488",
+          400: "#FF8A4C",
+          500: "#FF6A2C",
+          600: "#E85518",
         },
-        // Warm ember highlight, used sparingly for that premium glow
+        // Soft gold — secondary warm highlight
         gold: {
-          300: "#FBD98B",
-          400: "#F5C15C",
-          500: "#E8A13A",
+          200: "#FCEBC4",
+          300: "#F7D98B",
+          400: "#EFC45C",
+          500: "#E0A63A",
         },
+        // Warm clay/terracotta — tertiary, keeps variety inside one warm family
         violet: {
-          400: "#A99BF7",
-          500: "#8B7CF0",
+          300: "#E6B29A",
+          400: "#D4916E",
+          500: "#C2764F",
+        },
+        // Warm neutral ramp — overrides Tailwind's cool "slate" so every
+        // text-slate-* / border-slate-* across the site reads warm.
+        slate: {
+          100: "#F3EFE7",
+          200: "#E4DED2",
+          300: "#CEC6B6",
+          400: "#A49C8D",
+          500: "#7C756A",
+          600: "#58524A",
+          700: "#3A362F",
+          800: "#2A2620",
+          900: "#1A1713",
         },
       },
       backgroundImage: {
-        "hero-glow": "radial-gradient(ellipse 90% 55% at 50% 0%, rgba(30,140,235,0.28) 0%, rgba(30,140,235,0.06) 45%, transparent 72%)",
-        "aurora": "conic-gradient(from 210deg at 50% 40%, rgba(30,140,235,0.16), rgba(139,124,240,0.11), rgba(232,161,58,0.08), rgba(30,140,235,0.16))",
-        "card-sheen": "linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 30%, transparent 60%)",
-        "warm-floor": "linear-gradient(to top, rgba(232,161,58,0.10) 0%, transparent 40%)",
+        "hero-glow": "radial-gradient(ellipse 85% 55% at 50% 0%, rgba(255,106,44,0.22) 0%, rgba(255,106,44,0.05) 45%, transparent 72%)",
+        "aurora": "conic-gradient(from 210deg at 50% 40%, rgba(255,106,44,0.18), rgba(224,166,58,0.12), rgba(194,118,79,0.10), rgba(255,106,44,0.18))",
+        "card-sheen": "linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 30%, transparent 60%)",
+        "warm-floor": "linear-gradient(to top, rgba(255,106,44,0.10) 0%, transparent 40%)",
       },
       boxShadow: {
-        "glass": "0 1px 0 0 rgba(255,255,255,0.06) inset, 0 8px 30px -12px rgba(0,0,0,0.7)",
-        "card": "0 1px 0 0 rgba(255,255,255,0.05) inset, 0 10px 40px -16px rgba(0,0,0,0.8)",
-        "card-hover": "0 1px 0 0 rgba(255,255,255,0.08) inset, 0 20px 60px -20px rgba(14,111,204,0.35), 0 8px 24px -12px rgba(0,0,0,0.8)",
-        "glow-blue": "0 8px 40px -8px rgba(30,140,235,0.45)",
-        "pill": "0 1px 0 0 rgba(255,255,255,0.4) inset, 0 8px 20px -8px rgba(0,0,0,0.5)",
+        "glass": "0 1px 0 0 rgba(255,255,255,0.05) inset, 0 8px 30px -12px rgba(0,0,0,0.75)",
+        "card": "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 10px 40px -16px rgba(0,0,0,0.85)",
+        "card-hover": "0 1px 0 0 rgba(255,255,255,0.07) inset, 0 20px 60px -20px rgba(255,106,44,0.30), 0 8px 24px -12px rgba(0,0,0,0.85)",
+        // Name kept; now a warm amber glow
+        "glow-blue": "0 8px 40px -8px rgba(255,106,44,0.45)",
+        "pill": "0 1px 0 0 rgba(255,255,255,0.5) inset, 0 8px 20px -8px rgba(0,0,0,0.6)",
       },
       keyframes: {
         "fade-up": {
