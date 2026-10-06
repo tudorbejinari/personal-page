@@ -57,7 +57,7 @@ export default function Home() {
           ✳
         </div>
 
-        <div className="relative z-[2] max-w-6xl mx-auto px-6 min-h-[86vh] flex flex-col justify-end pt-32 pb-14 sm:pb-16">
+        <div className="relative z-[2] max-w-6xl mx-auto px-6 min-h-[82vh] flex flex-col justify-center pt-28 pb-16 sm:pt-32 sm:pb-20">
           {/* Eyebrow */}
           <div className="mb-7 animate-fade-up">
             <span className="inline-flex items-center gap-2.5 font-mono text-[12px] font-medium text-slate-500 tracking-wide uppercase">
