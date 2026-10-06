@@ -14,14 +14,14 @@ const Contact     = lazy(() => import("./pages/Contact"))
 const NotFound    = lazy(() => import("./pages/NotFound"))
 
 function PageLoader() {
-  return <div className="flex-1 min-h-[60vh] bg-navy-950" />
+  return <div className="flex-1 min-h-[60vh] bg-white" />
 }
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col">
+      <div className="min-h-screen bg-white text-slate-300 flex flex-col">
         <Navbar />
         <main className="flex-1">
           <ErrorBoundary>

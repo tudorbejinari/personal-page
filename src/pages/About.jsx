@@ -128,7 +128,7 @@ export default function About() {
         <div className="space-y-4 max-w-2xl">
           <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-100 leading-[1.15] tracking-tight">
             I build automated test systems that are fast, reliable, and designed to
-            {" "}<span className="emphasis text-gradient-blue">scale</span> —
+            {" "}<span className="text-muted-fade">scale</span> —
             then I use AI to make them faster to build and easier to maintain.
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-medium">
@@ -162,9 +162,9 @@ export default function About() {
           {aiCards.map(({ title, body }) => (
             <div
               key={title}
-              className="group rounded-2xl glass shadow-card p-5 space-y-2 relative overflow-hidden hairline-top hover:border-white/[0.14] hover:-translate-y-0.5 transition-all duration-300"
+              className="group rounded-2xl glass shadow-card p-5 space-y-2 relative overflow-hidden hairline-top hover:border-black/[0.12] hover:-translate-y-0.5 transition-all duration-300"
             >
-              <p className="relative text-sm font-semibold text-white">{title}</p>
+              <p className="relative text-sm font-semibold text-slate-100">{title}</p>
               <p className="relative text-sm text-slate-400 leading-relaxed">{body}</p>
             </div>
           ))}
@@ -185,9 +185,9 @@ export default function About() {
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Work Experience</p>
         <div className="space-y-4">
           {experience.map(({ company, type, location, roles }) => (
-            <div key={company} className="rounded-2xl glass shadow-card p-5 space-y-4 hover:border-white/[0.12] transition-colors duration-300">
+            <div key={company} className="rounded-2xl glass shadow-card p-5 space-y-4 hover:border-black/[0.12] transition-colors duration-300">
               <div>
-                <p className="text-sm font-semibold text-white">{company}</p>
+                <p className="text-sm font-semibold text-slate-100">{company}</p>
                 <p className="text-xs text-slate-500 mt-0.5">{type} · {location}</p>
               </div>
               <div className="space-y-3">
@@ -207,10 +207,10 @@ export default function About() {
       {/* Education */}
       <section className="space-y-5">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Education</p>
-        <div className="divide-y divide-white/[0.06]">
+        <div className="divide-y divide-black/[0.08]">
           {education.map(({ title, institution, period, note }) => (
             <div key={title} className="py-4 space-y-0.5">
-              <p className="text-sm font-semibold text-white leading-snug">{title}</p>
+              <p className="text-sm font-semibold text-slate-100 leading-snug">{title}</p>
               <p className="text-sm text-slate-400">{institution}</p>
               <p className="text-xs text-slate-600">{period}</p>
               {note && <p className="text-xs text-slate-500 pt-1 leading-relaxed">{note}</p>}
@@ -222,7 +222,7 @@ export default function About() {
       {/* Tools */}
       <section className="space-y-5">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Tools &amp; Stack</p>
-        <div className="divide-y divide-white/[0.06]">
+        <div className="divide-y divide-black/[0.08]">
           {tools.map(({ category, items }) => (
             <div key={category} className="py-3.5 flex flex-col sm:flex-row sm:gap-6 gap-1 text-sm">
               <span className="text-slate-500 sm:w-32 sm:shrink-0 font-medium">{category}</span>

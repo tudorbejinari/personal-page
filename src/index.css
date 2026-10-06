@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,57 +12,44 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #0A0908;
+    background-color: #FFFFFF;
   }
 
   body {
-    background-color: #0A0908;
-    color: #CEC6B6;
-    /* Warm vertical wash so the page never reads as a flat black rectangle */
-    background-image: radial-gradient(120% 60% at 50% -10%, rgba(255,106,44,0.09) 0%, transparent 55%);
+    background-color: #FFFFFF;
+    color: #433D34;
+    /* Faint warm wash at the top so the white never feels clinical */
+    background-image: radial-gradient(120% 55% at 50% -8%, rgba(255,126,0,0.05) 0%, transparent 55%);
     background-attachment: fixed;
-    position: relative;
-  }
-
-  /* Fine film grain over the whole page — the premium, non-flat finish */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.4;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   ::selection {
-    background-color: rgba(255, 106, 44, 0.30);
-    color: #F3EFE7;
+    background-color: rgba(255, 126, 0, 0.22);
+    color: #1A1713;
   }
 
   h1, h2, h3 {
-    font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+    font-family: "Geist", system-ui, sans-serif;
   }
 }
 
 @layer components {
-  /* Frosted-glass surface — warm, low-key translucency over the ink ground */
+  /* Light panel surface — soft off-white card over the white ground */
   .glass {
-    background-color: rgba(26, 23, 19, 0.55);
-    backdrop-filter: blur(20px) saturate(130%);
-    -webkit-backdrop-filter: blur(20px) saturate(130%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background-color: rgba(252, 251, 248, 0.80);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(26, 23, 19, 0.08);
   }
 
   .glass-strong {
-    background-color: rgba(16, 14, 11, 0.74);
-    backdrop-filter: blur(28px) saturate(140%);
-    -webkit-backdrop-filter: blur(28px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    border: 1px solid rgba(26, 23, 19, 0.08);
   }
 
-  /* Warm cream pill — primary CTA (skild's light "Get started" capsule) */
+  /* Primary CTA — solid near-black pill with light text (skild's light-site CTA) */
   .btn-pill {
     display: inline-flex;
     align-items: center;
@@ -70,19 +57,20 @@
     gap: 0.5rem;
     padding: 0.6rem 1.35rem;
     border-radius: 9999px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.875rem;
-    color: #17140F;
-    background: linear-gradient(180deg, #F7F3EB 0%, #E6DFD1 100%);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.6) inset, 0 10px 24px -10px rgba(0,0,0,0.6);
-    transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease;
+    color: #F7F4EE;
+    background: #1A1713;
+    box-shadow: 0 1px 2px 0 rgba(26,23,19,0.10), 0 10px 24px -12px rgba(26,23,19,0.5);
+    transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease, background 0.2s ease;
   }
   .btn-pill:hover {
     transform: translateY(-1px);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.7) inset, 0 16px 34px -12px rgba(255,106,44,0.45);
+    background: #2B2620;
+    box-shadow: 0 1px 2px 0 rgba(26,23,19,0.12), 0 16px 34px -14px rgba(255,126,0,0.45);
   }
 
-  /* Solid amber pill — alternate primary for the warmest call to action */
+  /* Alternate primary — solid orange pill */
   .btn-accent {
     display: inline-flex;
     align-items: center;
@@ -92,17 +80,17 @@
     border-radius: 9999px;
     font-weight: 600;
     font-size: 0.875rem;
-    color: #1A0E06;
-    background: linear-gradient(180deg, #FF8A4C 0%, #FF6A2C 100%);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.35) inset, 0 10px 28px -10px rgba(255,106,44,0.55);
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #FF9533 0%, #FF7E00 100%);
+    box-shadow: 0 1px 2px 0 rgba(255,126,0,0.25), 0 10px 26px -10px rgba(255,126,0,0.55);
     transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease;
   }
   .btn-accent:hover {
     transform: translateY(-1px);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.45) inset, 0 18px 38px -12px rgba(255,106,44,0.7);
+    box-shadow: 0 1px 2px 0 rgba(255,126,0,0.3), 0 18px 38px -12px rgba(255,126,0,0.7);
   }
 
-  /* Translucent ghost pill — secondary CTA */
+  /* Secondary CTA — light bordered ghost */
   .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -112,18 +100,16 @@
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.875rem;
-    color: #E4DED2;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    color: #2B2620;
+    background-color: rgba(26, 23, 19, 0.02);
+    border: 1px solid rgba(26, 23, 19, 0.14);
     transition: all 0.2s cubic-bezier(0.16,1,0.3,1);
   }
   .btn-ghost:hover {
     transform: translateY(-1px);
-    background-color: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 106, 44, 0.35);
-    color: #ffffff;
+    background-color: rgba(26, 23, 19, 0.04);
+    border-color: rgba(255, 126, 0, 0.5);
+    color: #1A1713;
   }
 
   /* Numbered section marker — circular amber-ringed badge (skild signature) */
@@ -133,56 +119,35 @@
     width: 1.9rem;
     height: 1.9rem;
     border-radius: 9999px;
-    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-family: "Geist Mono", ui-monospace, monospace;
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.02em;
-    color: #FFB488;
-    background: radial-gradient(120% 120% at 30% 20%, rgba(255,106,44,0.18), rgba(255,106,44,0.04));
-    border: 1px solid rgba(255, 106, 44, 0.35);
-    box-shadow: 0 0 20px -6px rgba(255, 106, 44, 0.45);
+    color: #E66F00;
+    background: radial-gradient(120% 120% at 30% 20%, rgba(255,126,0,0.14), rgba(255,126,0,0.03));
+    border: 1px solid rgba(255, 126, 0, 0.40);
   }
 }
 
 @layer utilities {
-  /* The signature editorial emphasis — italic serif accent word in headlines */
-  .emphasis {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
-  /* Muted continuation phrase in two-tone headlines */
+  /* Muted second-tone word in two-tone headlines (skild's gray/black pattern) */
   .text-muted-fade {
-    color: #8E8575;
+    color: #A79E90;
   }
 
-  /* Warm accent gradient for text (name kept from the old blue system) */
+  /* Solid orange accent text (name kept from the old blue system) */
   .text-gradient-blue {
-    background: linear-gradient(135deg, #FFB488 0%, #FF6A2C 55%, #E0A63A 100%);
+    background: linear-gradient(135deg, #FF9533 0%, #FF7E00 60%, #E66F00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #EFC45C 0%, #F7D98B 100%);
+    background: linear-gradient(135deg, #D49A1F 0%, #B8820A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  /* Localised film grain for individual panels */
-  .grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.45;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   /* Hairline gradient divider used atop cards */
@@ -196,14 +161,8 @@
     left: 1.25rem;
     right: 1.25rem;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,106,44,0.5) 20%, rgba(224,166,58,0.3) 60%, transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,126,0,0.45) 20%, rgba(212,154,31,0.25) 60%, transparent);
   }
-}
-
-/* Keep app content above the global grain layer */
-#root {
-  position: relative;
-  z-index: 1;
 }
 
 /* Hide scrollbar on tag rows */
@@ -234,17 +193,17 @@ html, body {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0908;
+  background: #F4EFE7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A2620;
+  background: #D9D2C6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF6A2C;
+  background: #FF7E00;
 }
 
 /* Respect reduced-motion preferences everywhere */

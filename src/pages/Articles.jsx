@@ -16,7 +16,7 @@ export default function Articles() {
       <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
         <div className="space-y-3 max-w-2xl">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Writing</p>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-100 tracking-tightest">Field <span className="emphasis text-gradient-blue">notes</span></h1>
+          <h1 className="font-display text-4xl sm:text-5xl font-semibold text-slate-100 tracking-tightest">Field <span className="text-muted-fade">notes</span></h1>
           <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
             Practical knowledge from real QA work. Architecture decisions, AI tools, and techniques that actually move the needle.
           </p>
@@ -27,8 +27,8 @@ export default function Articles() {
             onClick={() => setActiveTag(null)}
             className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
               !activeTag
-                ? "bg-white text-navy-950 border-white shadow-pill"
-                : "glass text-slate-400 hover:text-white hover:border-white/20"
+                ? "bg-navy-900 text-white border-navy-900 shadow-pill"
+                : "glass text-slate-400 hover:text-slate-100 hover:border-black/20"
             }`}
           >
             All ({articles.length})
@@ -42,8 +42,8 @@ export default function Articles() {
                 onClick={() => setActiveTag(active ? null : tag)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
                   active
-                    ? "bg-white text-navy-950 border-white shadow-pill"
-                    : "glass text-slate-400 hover:text-white hover:border-white/20"
+                    ? "bg-navy-900 text-white border-navy-900 shadow-pill"
+                    : "glass text-slate-400 hover:text-slate-100 hover:border-black/20"
                 }`}
               >
                 {tag} ({count})

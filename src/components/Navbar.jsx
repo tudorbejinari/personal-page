@@ -10,7 +10,7 @@ const links = [
 
 function Mark() {
   return (
-    <span className="grid place-items-center w-7 h-7 rounded-lg bg-gradient-to-br from-sky-400 via-sky-500 to-gold-500 text-[13px] font-display font-bold text-navy-950 shadow-glow-blue">
+    <span className="grid place-items-center w-7 h-7 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 text-[13px] font-display font-bold text-white shadow-glow-blue">
       T
     </span>
   )
@@ -53,7 +53,7 @@ export default function Navbar() {
               className="flex items-center gap-2.5 group"
             >
               <Mark />
-              <span className="font-display font-semibold text-slate-100 text-[15px] tracking-tight group-hover:text-sky-300 transition-colors duration-200">
+              <span className="font-display font-semibold text-slate-100 text-[15px] tracking-tight group-hover:text-sky-500 transition-colors duration-200">
                 Tudor<span className="text-sky-500">.b</span>
               </span>
             </Link>
@@ -67,8 +67,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `px-3.5 py-2 rounded-full text-[13.5px] font-medium transition-all duration-200 ${
                       isActive
-                        ? "text-white bg-white/10"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        ? "text-slate-100 bg-black/[0.06]"
+                        : "text-slate-400 hover:text-slate-100 hover:bg-black/[0.04]"
                     }`
                   }
                 >
@@ -88,11 +88,11 @@ export default function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={open}
-              className="sm:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-xl hover:bg-white/5 transition-colors"
+              className="sm:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-xl hover:bg-black/[0.04] transition-colors"
             >
-              <span className={`block w-5 h-0.5 bg-slate-200 rounded-full transition-all duration-300 origin-center ${open ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-slate-200 rounded-full transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-slate-200 rounded-full transition-all duration-300 origin-center ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-slate-100 rounded-full transition-all duration-300 origin-center ${open ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-slate-100 rounded-full transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-slate-100 rounded-full transition-all duration-300 origin-center ${open ? "-rotate-45 -translate-y-2" : ""}`} />
             </button>
           </div>
         </nav>
@@ -102,11 +102,11 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 z-40 sm:hidden">
           <div
-            className="absolute inset-0 bg-navy-950/70 backdrop-blur-sm animate-fade-up"
+            className="absolute inset-0 bg-navy-900/25 backdrop-blur-sm animate-fade-up"
             style={{ animationDuration: "0.3s" }}
             onClick={() => setOpen(false)}
           />
-          <div className="absolute top-[4.75rem] left-3 right-3 glass-strong rounded-2xl shadow-glass p-2.5 flex flex-col gap-1">
+          <div className="absolute top-[4.75rem] left-3 right-3 glass-strong rounded-2xl shadow-card p-2.5 flex flex-col gap-1">
             {links.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -114,8 +114,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-white bg-white/10"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      ? "text-slate-100 bg-black/[0.06]"
+                      : "text-slate-300 hover:text-slate-100 hover:bg-black/[0.04]"
                   }`
                 }
               >
