@@ -34,10 +34,10 @@ const HERO_BG =
 
 function SectionLabel({ num, children }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="sec-marker">{num}</span>
-      <p className="font-mono text-xs font-medium text-slate-500 uppercase tracking-[0.18em]">{children}</p>
-    </div>
+    <span className="tag-label">
+      {num && <span className="tag-label__num">{num}</span>}
+      {children}
+    </span>
   )
 }
 
@@ -49,6 +49,9 @@ export default function Home() {
         className="relative -mt-[4.75rem] overflow-hidden"
         style={{ background: HERO_BG }}
       >
+        {/* Faint technical crosshatch texture */}
+        <div className="absolute inset-0 bg-tech-grid opacity-70 pointer-events-none" />
+
         {/* Giant faded brand watermark */}
         <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 text-[24rem] sm:text-[34rem] leading-none font-display font-bold text-sky-500/[0.05] select-none pointer-events-none animate-float-slow">
           ✳

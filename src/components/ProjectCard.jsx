@@ -21,7 +21,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       <div className="relative">
-        <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1.5">Problem</p>
+        <p className="font-mono text-[11px] font-medium text-slate-500 uppercase tracking-[0.1em] mb-1.5">Problem</p>
         <p className="text-slate-300 text-sm leading-relaxed">{problem}</p>
       </div>
 
@@ -32,7 +32,7 @@ export default function ProjectCard({ project }) {
       {open && (
         <div className="relative space-y-4 pt-4 border-t border-black/[0.08]" onClick={(e) => e.stopPropagation()}>
           <div>
-            <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1.5">What I built</p>
+            <p className="font-mono text-[11px] font-medium text-slate-500 uppercase tracking-[0.1em] mb-1.5">What I built</p>
             <p className="text-slate-300 text-sm leading-relaxed">{automated}</p>
           </div>
 

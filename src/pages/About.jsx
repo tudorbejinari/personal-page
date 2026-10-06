@@ -155,7 +155,7 @@ export default function About() {
 
       {/* How I apply AI */}
       <section className="space-y-6">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">
+        <p className="tag-label">
           How I apply AI — specifically
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -182,7 +182,7 @@ export default function About() {
 
       {/* Work Experience */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Work Experience</p>
+        <p className="tag-label">Work Experience</p>
         <div className="space-y-4">
           {experience.map(({ company, type, location, roles }) => (
             <div key={company} className="rounded-2xl glass shadow-card p-5 space-y-4 hover:border-black/[0.12] transition-colors duration-300">
@@ -206,7 +206,7 @@ export default function About() {
 
       {/* Education */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Education</p>
+        <p className="tag-label">Education</p>
         <div className="divide-y divide-black/[0.08]">
           {education.map(({ title, institution, period, note }) => (
             <div key={title} className="py-4 space-y-0.5">
@@ -221,7 +221,7 @@ export default function About() {
 
       {/* Tools */}
       <section className="space-y-5">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Tools &amp; Stack</p>
+        <p className="tag-label">Tools &amp; Stack</p>
         <div className="divide-y divide-black/[0.08]">
           {tools.map(({ category, items }) => (
             <div key={category} className="py-3.5 flex flex-col sm:flex-row sm:gap-6 gap-1 text-sm">

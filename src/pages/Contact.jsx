@@ -27,7 +27,7 @@ export default function Contact() {
       <PageBanner src="https://images.unsplash.com/photo-1563089145-599997674d42?w=1400&q=75&fit=crop&auto=format&fm=webp" />
     <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
       <div className="space-y-4">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Contact</p>
+        <p className="tag-label">Contact</p>
         <h1 className="font-display text-4xl sm:text-5xl font-semibold text-slate-100 tracking-tightest">Get in <span className="text-muted-fade">touch</span></h1>
         <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-md">
           Always happy to talk testing, automation, and AI — from consulting to
@@ -52,7 +52,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-card-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             <div className="relative min-w-0 flex-1 space-y-1">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.18em]">{label}</p>
+              <p className="font-mono text-[11px] font-medium text-slate-500 uppercase tracking-[0.1em]">{label}</p>
               <p className="text-sm font-medium text-slate-100 group-hover:text-sky-500 transition-colors duration-200 break-all">
                 {value}
               </p>

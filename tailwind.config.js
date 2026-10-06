@@ -46,16 +46,17 @@ export default {
         },
         // Warm neutral ramp. Convention: LOWER index = HIGHER contrast on white.
         // (slate-100 = near-black headings … slate-700 = faint hairlines.)
+        // Tuned dark for strong readability on a white ground.
         slate: {
-          100: "#1A1713",
-          200: "#2B2620",
-          300: "#433D34",
-          400: "#6E665B",
-          500: "#938A7D",
-          600: "#B8B0A3",
-          700: "#D9D2C6",
-          800: "#EAE4D9",
-          900: "#F4EFE7",
+          100: "#14110C",
+          200: "#1E1A14",
+          300: "#241F18",
+          400: "#4A443A",
+          500: "#6B6356",
+          600: "#8A8275",
+          700: "#C6BEB1",
+          800: "#E2DBD0",
+          900: "#F1ECE4",
         },
       },
       backgroundImage: {
@@ -63,6 +64,8 @@ export default {
         "aurora": "conic-gradient(from 210deg at 50% 40%, rgba(255,126,0,0.12), rgba(212,154,31,0.08), rgba(192,132,87,0.07), rgba(255,126,0,0.12))",
         "card-sheen": "linear-gradient(160deg, rgba(255,126,0,0.06) 0%, rgba(255,126,0,0.01) 40%, transparent 65%)",
         "warm-floor": "linear-gradient(to top, rgba(255,126,0,0.08) 0%, transparent 40%)",
+        // Faint technical "+" crosshatch (skild's engineering texture)
+        "tech-grid": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%231a1713' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M24 20v8M20 24h8'/%3E%3C/g%3E%3C/svg%3E\")",
       },
       boxShadow: {
         "glass": "0 1px 2px 0 rgba(26,23,19,0.04), 0 8px 24px -16px rgba(26,23,19,0.14)",

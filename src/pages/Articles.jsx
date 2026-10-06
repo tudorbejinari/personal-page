@@ -15,7 +15,7 @@ export default function Articles() {
       <PageBanner src="https://images.unsplash.com/photo-1650473395434-8674d953ef2f?w=1400&q=75&fit=crop&auto=format&fm=webp" />
       <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14 space-y-10 sm:space-y-12">
         <div className="space-y-3 max-w-2xl">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">Writing</p>
+          <p className="tag-label">Writing</p>
           <h1 className="font-display text-4xl sm:text-5xl font-semibold text-slate-100 tracking-tightest">Field <span className="text-muted-fade">notes</span></h1>
           <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
             Practical knowledge from real QA work. Architecture decisions, AI tools, and techniques that actually move the needle.
